@@ -97,7 +97,7 @@ def remove(id):
 def register():
     form = RegistrationForm(request.form)
     if request.method == 'POST' and form.validate():
-        #  mac = commands.getstatusoutput('./arpfind.sh ' + request.remote_addr)
+        mac = commands.getstatusoutput('./arpfind.sh ' + request.remote_addr)
         User.create(name=form.name.data, fistname=form.fistname.data, ip=request.remote_addr, team=form.team.data, pizza=form.pizza.data).save
         return redirect(url_for('ok'))
     return render_template('register.html', form=form)
@@ -110,4 +110,4 @@ def proxy(path):
         return str(e)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=80)
