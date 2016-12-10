@@ -1,0 +1,4 @@
+Flask==0.8
+Jinja2==2.8
+WTForms==2.1
+peewee==2.8.5

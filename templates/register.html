@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+  </head>
+  <body>
+    {% from "_formhelpers.html" import render_field %}
+    <form method=post action="/register">
+      <dl>
+        {{ render_field(form.name) }}
+        {{ render_field(form.fistname) }}
+        {{ render_field(form.team) }}
+
+
+<label>Pizza <)</label>
+      <SELECT name="pizza" id="pizza" size="1">
+      <OPTION>Pas de pizza
+      <OPTION>BUFFALO
+      <OPTION>CALZONE
+      <OPTION>CHICKEN BBQ
+      <OPTION>CHICKEN CHEESE
+      <OPTION>CHORIZO
+      <OPTION>DELICATESSEN
+      <OPTION>HOT FEVER
+      <OPTION>MERGUEZ
+      <OPTION>RÉGINA
+      <OPTION>ROYALE
+      <OPTION>VÉGÉTARIENNE
+      </SELECT>
+
+      </dl>
+      <p><input type=submit value=Register>
+      </form>
+  </body>
+</html>

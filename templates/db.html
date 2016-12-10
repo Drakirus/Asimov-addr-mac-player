@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>ip-address</th>
+    <th>Mac-address</th>
+    <th>Team</th>
+    <th>Pizza</th>
+    <th>Delete</th>
+  </tr>
+
+  {% for entry in User %}
+  <tr>
+  <td>{{entry.id}}</td>
+  <td>{{entry.name}}</td>
+  <td>{{entry.fistname}}</td>
+  <td>{{entry.ip}}</td>
+  <td>{{entry.mac}}</td>
+  <td>{{entry.team}}</td>
+  <td>{{entry.pizza}}</td>
+  <td>
+  <form method="post" action="{{ url_for('remove', id=entry.id) }}">
+    <button type="submit">Delete</button>
+  </form>
+  </td>
+</tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
