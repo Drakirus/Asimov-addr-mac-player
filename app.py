@@ -1,3 +1,6 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+
 import sys
 import commands
 reload(sys)
@@ -32,7 +35,7 @@ db.connect()
 try:
     db.create_tables([User])
 except Exception as e:
-    print(e)
+    print e
 
 UPLOAD_FOLDER = './uploads'
 app = Flask(__name__, static_url_path = "", static_folder = "contents")
@@ -111,3 +114,4 @@ def proxy(path):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
+
